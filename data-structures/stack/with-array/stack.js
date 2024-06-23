@@ -1,25 +1,27 @@
 class Stack {
+  #items;
+
   constructor() {
-    this.items = [];
+    this.#items = [];
   }
 
   push(element) {
-    this.items.push(element);
+    this.#items.push(element);
   }
 
   pop() {
     if (this.isEmpty()) {
       return "Underflow";
     }
-    return this.items.pop();
+    return this.#items.pop();
   }
 
   peek() {
-    return this.items[this.size() - 1];
+    return this.#items[this.size() - 1];
   }
 
   size() {
-    return this.items.length;
+    return this.#items.length;
   }
 
   isEmpty() {
@@ -27,7 +29,7 @@ class Stack {
   }
 
   clear() {
-    this.items = [];
+    this.#items = [];
   }
 }
 

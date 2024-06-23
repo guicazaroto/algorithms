@@ -1,20 +1,22 @@
 const Stack = require("../data-structures/stack/with-array/stack");
 
-function decimalToBinary (number) {
+function decimalToBinary (number, base) {
   const stack = new Stack()
+  const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   let initialNumber = number
   let binaryString = ''
 
   while(initialNumber > 0) {
-    const mod  = initialNumber % 2
+    const mod  = initialNumber % base
     stack.push(mod)
     
-    initialNumber = Math.floor(initialNumber / 2)
+    initialNumber = Math.floor(initialNumber / base)
   }
 
+
   while(!stack.isEmpty()) {
-    binaryString += stack.pop().toString()
+    binaryString += digits[stack.pop().toString()]
   }
 
   return binaryString
