@@ -33,3 +33,17 @@ test('Stack should return Underflow when popping an empty stack', () => {
   const stack = new Stack();
   expect(stack.pop()).toBe('Underflow');
 });
+
+test('return empty string when calling toString on an empty stack', () => {
+  const stack = new Stack();
+  expect(stack.toString()).toBe('');
+});
+
+test('return comma separated string when calling toString on a non-empty stack', () => {
+  const stack = new Stack();
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  expect(stack.toString()).toBe('1, 2, 3');
+}
+);
